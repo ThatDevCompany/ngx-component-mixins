@@ -22,7 +22,7 @@ export interface Size {
  * Return a Typescript Mixin for a resizable class which will automatically hook on to the Window Resize event
  * and fire the internal doResize() method with a SizeBundle object
  */
-export function Resizable<T extends Constructor>(
+export function ResizableMixin<T extends Constructor>(
 	BaseClass: T
 ): Constructor<IResizable> & T {
 	class Resizable extends BaseClass implements IResizable {
