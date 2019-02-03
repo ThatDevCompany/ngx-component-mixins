@@ -1,7 +1,7 @@
 {
     "name": "ngx-component-mixins",
     "description": "A collection of useful mixins for use in creating Angular Components",
-    "version": "0.1.1",
+    "version": "0.1.6",
     "license": "MIT",
     "repository": {
         "type": "git",
@@ -16,8 +16,8 @@
         "test": "node admin/scripts/test.js",
         "publish": "node admin/scripts/publish.js"
     },
-    "dependencies": {
-        "rxjs": "^6.4.0"
+    "peerDependencies": {
+        "rxjs": "^6.2.2"
     },
     "devDependencies": {
         "@types/jasmine": "3.3.0",

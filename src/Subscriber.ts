@@ -6,6 +6,7 @@ import { Constructor } from './Base'
  * An Interface for the Subscriber mixin
  */
 export interface ISubscriber {
+	ngOnDestroy()
 	subscribeTo<T>(observable: Observable<T>, fnc: (...args) => void)
 	when<T>(observable: Observable<T>): Promise<T>
 }
