@@ -25,6 +25,7 @@
         "jasmine-core": "3.3.0",
         "jasmine-spec-reporter": "4.2.1",
         "nyc": "13.1.0",
+        "rxjs": "6.4.0",
         "that-build-library": "1.0.2",
         "ts-node": "7.0.1",
         "tsconfig-paths": "3.7.0",
