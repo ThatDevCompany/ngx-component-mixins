@@ -6,6 +6,7 @@
 		"sourceMap": false,
 		"declaration": true,
 		"moduleResolution": "node",
+		"experimentalDecorators": true,
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./src/*"]

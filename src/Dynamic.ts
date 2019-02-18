@@ -36,10 +36,10 @@ export class DynamicClock extends BehaviorSubject<DynamicTick> {}
  * - A dynamic component has the capacity to change over time
  * - It can be Started, Stopped and can run a process during each moment (tick of time)
  */
-export function DynamicMixin<T extends Constructor>(
+export function Dynamic<T extends Constructor>(
 	Base: T
 ): Constructor<IDynamic> & T {
-	class Dynamic extends Base implements IDynamic {
+	class DynamicClass extends Base implements IDynamic {
 		/* PROPERTIES */
 		/**
 		 * Should the component run immediately when it is initiated
@@ -148,5 +148,5 @@ export function DynamicMixin<T extends Constructor>(
 		}
 	}
 
-	return Dynamic
+	return DynamicClass
 }

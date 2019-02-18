@@ -1,7 +1,7 @@
 /**
  * An empty class to form the base of all Mixins
  */
-export class BaseMixin {}
+export class Base {}
 
 /**
  * A Typescript definition of a constructor function

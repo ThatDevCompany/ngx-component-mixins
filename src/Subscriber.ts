@@ -15,10 +15,10 @@ export interface ISubscriber {
  * Return a Typescript Mixin for a subscribable component class
  * Basically this offers the component automated unsubscription
  */
-export function SubscriberMixin<T extends Constructor>(
+export function Subscriber<T extends Constructor>(
 	BaseClass: T
 ): Constructor<ISubscriber> & T {
-	class Subscriber extends BaseClass implements ISubscriber {
+	class SubscriberClass extends BaseClass implements ISubscriber {
 		/**
 		 * An array of all subscriptions created
 		 */
@@ -91,5 +91,5 @@ export function SubscriberMixin<T extends Constructor>(
 		}
 	}
 
-	return Subscriber
+	return SubscriberClass
 }

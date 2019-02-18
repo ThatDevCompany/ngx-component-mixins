@@ -22,10 +22,10 @@ export interface Size {
  * Return a Typescript Mixin for a resizable class which will automatically hook on to the Window Resize event
  * and fire the internal doResize() method with a SizeBundle object
  */
-export function ResizableMixin<T extends Constructor>(
+export function Resizable<T extends Constructor>(
 	BaseClass: T
 ): Constructor<IResizable> & T {
-	class Resizable extends BaseClass implements IResizable {
+	class ResizableClass extends BaseClass implements IResizable {
 		/**
 		 * Stub function for overriding
 		 */
@@ -36,17 +36,15 @@ export function ResizableMixin<T extends Constructor>(
 		 */
 		constructor(...args: Array<any>) {
 			super(args)
-			window.addEventListener('resize', this.resizeHandler.bind(this))
-			setTimeout(() => {
-				this.resizeHandler()
-			}, 100)
+			window.addEventListener('resize', () => this.resizeHandler())
+			setTimeout(() => this.resizeHandler(), 100)
 		}
 
 		/**
 		 * Handle the window resize event, create the SizeBundle and trigger the doResize method
 		 * throttled to avoid over firing
 		 */
-		resizeHandler = _.throttle(this.doResize.bind(this), 100, {
+		resizeHandler = _.throttle(() => this.doResize(), 100, {
 			leading: false,
 			trailing: true
 		})
@@ -69,5 +67,5 @@ export function ResizableMixin<T extends Constructor>(
 		}
 	}
 
-	return Resizable
+	return ResizableClass
 }

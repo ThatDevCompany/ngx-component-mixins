@@ -1,4 +1,5 @@
 export * from './Base'
 export * from './Dynamic'
+export * from './Processingable'
 export * from './Resizable'
 export * from './Subscriber'
